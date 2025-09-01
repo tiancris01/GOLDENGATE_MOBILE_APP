@@ -1,0 +1,45 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  branch-name-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          BRANCH_NAME="${GITHUB_REF##*/}"
+          if [[ ! $BRANCH_NAME =~ ^(main|ft\/|tt\/|rf\/|cr\/|wr\/|fx\/|hf\/) ]]; then
+            echo "Branch name '$BRANCH_NAME' does not follow the convention!"
+            exit 1
+          fi
+
+  commit-message-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate commit messages
+        run: |
+          bash .github/scripts/validate_commit.sh
+
+  build-test-analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.35.3"
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Analyze
+        run: flutter analyze
+      - name: Format check
+        run: dart format --set-exit-if-changed .
+      - name: Run tests
+        run: flutter test
