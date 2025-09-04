@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Validate branch name
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr/|wr/|fx/|hf/|dc/|ts|ch/) ]]; then
+  echo "Invalid branch name: $BRANCH_NAME"
+  exit 1
+fi
+
+# Validate latest commit message
+COMMIT_MSG=$(git log --pretty=format:%s -1)
+if [[ ! $COMMIT_MSG =~ ^\[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
+  echo "Invalid commit message: $COMMIT_MSG"
+  exit 1
+fi

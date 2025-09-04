@@ -1,0 +1,39 @@
+name: Convention Checks
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+      - name: Validate branch name
+        run: |
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr|wr|fx|hf|dc|ts|ch/) ]]; then
+            echo "Invalid branch name: $BRANCH_NAME"
+            exit 1
+          fi
+      - name: Validate commit message
+        run: |
+          COMMIT_MSG=$(git log --pretty=format:%s -1)
+          if [[ ! $COMMIT_MSG =~ ^\[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
+            echo "Invalid commit message: $COMMIT_MSG"
+            exit 1
+          fi
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Analyze code
+        run: flutter analyze
+      - name: Run tests
+        run: flutter test
+      - name: Format check
+        run: dart format --set-exit-if-changed .
