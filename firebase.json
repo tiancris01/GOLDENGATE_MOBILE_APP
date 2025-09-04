@@ -1,0 +1,28 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "goldengatemobileapp-7ac1a",
+          "appId": "1:1024013348005:android:91a6b4f93a1616a1c2314c",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "goldengatemobileapp-7ac1a",
+          "configurations": {
+            "android": "1:1024013348005:android:91a6b4f93a1616a1c2314c",
+            "ios": "1:1024013348005:ios:5df2587dabf6c1c3c2314c",
+            "macos": "1:1024013348005:ios:5df2587dabf6c1c3c2314c",
+            "web": "1:1024013348005:web:d24b4f1511027625c2314c",
+            "windows": "1:1024013348005:web:5e6c2e23f92d1a53c2314c"
+          }
+        }
+      }
+    }
+  }
+}

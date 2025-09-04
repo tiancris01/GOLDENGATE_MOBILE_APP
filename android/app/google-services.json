@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1024013348005",
+    "project_id": "goldengatemobileapp-7ac1a",
+    "storage_bucket": "goldengatemobileapp-7ac1a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024013348005:android:91a6b4f93a1616a1c2314c",
+        "android_client_info": {
+          "package_name": "com.example.golden_gate_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNUq3HgjX-RvGycAsxaF0QpQ_mbjQR55o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
