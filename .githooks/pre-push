@@ -13,3 +13,12 @@ if [[ ! $COMMIT_MSG =~ ^\[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]
   echo "Invalid commit message: $COMMIT_MSG"
   exit 1
 fi
+
+# Dart format check
+changed_files=$(dart format --set-exit-if-changed .)
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Dart files need formatting. Please run 'dart format .' before pushing."
+  echo "$changed_files"
+  exit 1
+fi
