@@ -1,0 +1,20 @@
+name: golden_gate_app
+packages:
+  - packages/**
+
+scripts:
+  bootstrap:
+    run: melos bootstrap
+    description: Bootstrap all packages in the workspace
+  clean:
+    run: melos exec -- "flutter clean"
+    description: Clean all packages
+  pub_get:
+    run: melos exec -- "flutter pub get"
+    description: Run pub get in all packages
+  analyze:
+    run: melos exec -- "flutter analyze"
+    description: Analyze all packages
+  test:
+    run: melos exec -- "flutter test"
+    description: Run tests in all packages
