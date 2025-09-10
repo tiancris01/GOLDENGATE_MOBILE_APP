@@ -3,18 +3,21 @@ packages:
   - packages/**
 
 scripts:
+  setup_hooks:
+    description: "Configure git hooks before bootstrapping"
+    run: |
+      echo ":hook: Configuring Git Hooks... "
+      chmod +x git_hooks/pre-push
+      git config core.hooksPath git_hooks
+      echo ":white_check_mark: Git hooks configured successfully."
+
+command:
   bootstrap:
-    run: melos bootstrap
-    description: Bootstrap all packages in the workspace
+    runPubGetInParallel: false
+    usePubspecOverrides: false
+    hooks:
+      pre: melos run setup_hooks
+      post: melos exec --order-dependents --concurrency=5 dart run build_runner build --delete-conflicting-outputs
   clean:
-    run: melos exec -- "flutter clean"
-    description: Clean all packages
-  pub_get:
-    run: melos exec -- "flutter pub get"
-    description: Run pub get in all packages
-  analyze:
-    run: melos exec -- "flutter analyze"
-    description: Analyze all packages
-  test:
-    run: melos exec -- "flutter test"
-    description: Run tests in all packages
+    hooks:
+      post: melos exec --order-dependents --flutter --concurrency=1 -- "flutter clean"
