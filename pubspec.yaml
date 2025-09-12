@@ -39,28 +39,28 @@ dependencies:
   cloud_firestore: ^6.0.1
   auth:
     path: packages/auth
-  flutter_riverpod: ^2.4.0
+  flutter_riverpod: ^3.0.0
   go_router: ^13.1.0
   google_sign_in: ^6.1.5
-  freezed_annotation: ^2.4.1
-  riverpod_annotation: ^2.3.5
+  freezed_annotation: ^3.1.0
+  riverpod_annotation: ^3.0.0
+  json_serializable: ^6.11.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  melos: ^3.0.0
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
-  freezed: ^2.4.7
-  build_runner: ^2.4.6
-  custom_lint: ^0.5.7
-  riverpod_generator: ^2.3.9
-  riverpod_lint: ^2.3.7
+  melos: ^3.4.0
+  flutter_lints: ^6.0.0
+  freezed: ^3.2.3
+  build_runner: ^2.7.1
+  custom_lint: ^0.8.0
+  riverpod_generator: ^3.0.0
+  riverpod_lint: ^3.0.0
   validators: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
