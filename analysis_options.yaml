@@ -4,7 +4,6 @@ linter:
   rules:
     avoid_print: false
     prefer_single_quotes: true
-    always_use_package_imports: true
     prefer_final_locals: true
     prefer_const_constructors: true
     prefer_const_literals_to_create_immutables: true
