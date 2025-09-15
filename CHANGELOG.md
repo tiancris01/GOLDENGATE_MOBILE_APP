@@ -1,12 +1,14 @@
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
-## [Unreleased]
-
-## [1.0.0] - YYYY-MM-DD
-
-## [1.0.0] - TBD
-
-- Initial release of golden_gate_app.
-- Initial release of golden_gate_app.
+- Initial commit
+- [dc][GG-001] Update branch and commit conventions documentation (#2)
+- [dc][GG-002] Add branch and commit convention checks workflow and pre-push hook (#3)
+- [dc][GG-003] Update convention checks workflow (#4)
+- [ft][GG-004] Setup Firebase and update Android build config for compatibility (#5)
+- [ft][GG-006] Create auth package with proper Flutter package template (#6)
+- [ft][GG-007] Set up auth module structure and basic tests (#7)
+- [ft][GG-008] Add build_runner to auth package and update melos.yaml for custom bootstrap/clean (#8)
+- [ch][GG-009] Update root and auth package changelogs with latest project-wide changes (#9)
+- [ft][GG-010] Set up Riverpod and GoRouter in main app (#10)
+- [ch][GG-011] Enhance analysis_options.yaml with advanced linting and analyzer config (#11)
+- [ft][GG-012] Update firebase.json (#12)
+- [ft][GG-013] Add user model, serialization, and Firestore integration (#13)
+- [ft][GG-014] Update GoRouter setup and fix provider errors (#14)
