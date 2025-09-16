@@ -1,6 +1,7 @@
 name: golden_gate_app
 packages:
-  - packages/**
+  - packages/auth
+  - packages/feature_commons
 
 scripts:
   setup_hooks:
