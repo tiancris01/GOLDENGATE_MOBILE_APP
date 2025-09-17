@@ -1,9 +1,56 @@
+melos:
+  useRootAsPackage: true
+  categories:
+    app:
+      - "."
+    packages:
+      - "packages/**"
+
 name: golden_gate_app
+
 packages:
   - packages/auth
   - packages/feature_commons
 
+versioning:
+  enabled: true
+  releaseType: semver
+  updateGitTagRefs: true
+  autoCommit: true
+  autoPush: false
+  changelog:
+    enabled: true
+    path: CHANGELOG.md
+    autoGenerate: true
+    autoCommit: true
+    autoPush: false
+
+dependencyOverride:
+  flutter_lints: ^6.0.0
+  flutter_riverpod: ^3.0.0
+  go_router: ^13.1.0
+  riverpod_annotation: ^3.0.0
+  freezed_annotation: ^3.1.0
+  build_runner: ^2.7.1
+  freezed: ^3.2.3
+  custom_lint: ^0.8.0
+  riverpod_generator: ^3.0.0
+  riverpod_lint: ^3.0.0
+  validators: ^3.0.0
+
 scripts:
+  analyze:
+    description: "Run flutter analyze in all packages"
+    run: melos exec --flutter -- "flutter analyze"
+  format:
+    description: "Run dart format in all packages"
+    run: melos exec -- "dart format ."
+  test:
+    description: "Run flutter test in all packages"
+    run: melos exec --flutter -- "flutter test"
+  pub_upgrade:
+    description: "Upgrade pub dependencies in all packages"
+    run: melos exec -- "flutter pub upgrade"
   setup_hooks:
     description: "Configure git hooks before bootstrapping"
     run: |
