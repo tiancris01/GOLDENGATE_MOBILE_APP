@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import 'package:golden_gate_app/navigation/route_names.dart';
+import '../../navigation/route_names.dart';
 
 class PageNotFound extends StatelessWidget {
   final String errorMessage;
-  const PageNotFound({super.key, required this.errorMessage});
+  const PageNotFound({required this.errorMessage, super.key});
 
   @override
   Widget build(BuildContext context) {

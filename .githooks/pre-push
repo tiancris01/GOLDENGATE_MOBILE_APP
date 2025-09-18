@@ -8,9 +8,13 @@ if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr/|wr/|fx/|hf/|dc/|ts|ch/) ]]; then
 fi
 
 # Validate latest commit message
+CONVENTIONAL_TYPES="feat|fix|docs|chore|refactor|perf|test|style|build|ci|revert|BREAKING CHANGE"
+TICKET_TYPES="ft|tt|rf|cr|wr|fx|hf|dc|ts|ch"
 COMMIT_MSG=$(git log --pretty=format:%s -1)
-if [[ ! $COMMIT_MSG =~ ^\[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
+PATTERN="^(${CONVENTIONAL_TYPES}): \[(${TICKET_TYPES})\]\[GG-[0-9]{3}\]\ .+"
+if [[ ! $COMMIT_MSG =~ $PATTERN ]]; then
   echo "Invalid commit message: $COMMIT_MSG"
+  echo "Expected format: <type>: [tt][GG-018] Description"
   exit 1
 fi
 
