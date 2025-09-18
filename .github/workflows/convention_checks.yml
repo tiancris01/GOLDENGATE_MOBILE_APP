@@ -25,8 +25,9 @@ jobs:
       - name: Validate commit message
         run: |
           COMMIT_MSG=$(git log --pretty=format:%s -1)
-          if [[ ! $COMMIT_MSG =~ ^\[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
+          if [[ ! $COMMIT_MSG =~ ^(feat|fix|docs|chore|refactor|perf|test|style|build|ci|revert|BREAKING\ CHANGE):\ \[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
             echo "Invalid commit message: $COMMIT_MSG"
+            echo "Expected format: <type>: [tt][GG-018] Description"
             exit 1
           fi
       - name: Install dependencies

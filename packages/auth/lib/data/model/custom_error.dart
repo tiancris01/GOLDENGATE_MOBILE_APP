@@ -5,11 +5,7 @@ part 'custom_error.g.dart';
 
 @freezed
 abstract class CustomError with _$CustomError {
-  const factory CustomError({
-    @Default('') String code,
-    @Default('') String message,
-  }) = _CustomError;
+  const factory CustomError({@Default('') String code, @Default('') String message}) = _CustomError;
 
-  factory CustomError.fromJson(Map<String, dynamic> json) =>
-      _$CustomErrorFromJson(json);
+  factory CustomError.fromJson(Map<String, dynamic> json) => _$CustomErrorFromJson(json);
 }

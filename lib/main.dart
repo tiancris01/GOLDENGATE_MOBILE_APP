@@ -21,10 +21,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'GoldenGate App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), useMaterial3: true),
       routerConfig: router,
     );
   }

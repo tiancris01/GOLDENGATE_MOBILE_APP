@@ -10,9 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:golden_gate_app/main.dart';
 
 void main() {
-  testWidgets('Splash page loads and displays title', (
-    WidgetTester tester,
-  ) async {
+  testWidgets('Splash page loads and displays title', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: MyApp()));
     await tester.pumpAndSettle();
     expect(find.text('Splash'), findsOneWidget);

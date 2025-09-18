@@ -13,10 +13,9 @@ _UserModel _$UserModelFromJson(Map<String, dynamic> json) => _UserModel(
   profilePictureUrl: json['profilePictureUrl'] as String? ?? '',
 );
 
-Map<String, dynamic> _$UserModelToJson(_UserModel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'email': instance.email,
-      'name': instance.name,
-      'profilePictureUrl': instance.profilePictureUrl,
-    };
+Map<String, dynamic> _$UserModelToJson(_UserModel instance) => <String, dynamic>{
+  'id': instance.id,
+  'email': instance.email,
+  'name': instance.name,
+  'profilePictureUrl': instance.profilePictureUrl,
+};
