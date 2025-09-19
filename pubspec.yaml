@@ -91,3 +91,48 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+# Melos configuration
+melos:
+  useRootAsPackage: true
+  packages:
+    - packages/*
+
+  versioning:
+    enabled: true
+    releaseType: semver
+    updateGitTagRefs: true
+    autoCommit: true
+    autoPush: false
+    changelog:
+      enabled: true
+      path: CHANGELOG.md
+      autoGenerate: true
+      autoCommit: true
+      autoPush: false
+
+  scripts:
+    setup_hooks:
+      description: "Configure a git hook to check if the app compiles and there are not l10n generated files uncommited before pushing"
+      run: |
+        echo ":hook: Configurando Git Hooks... "
+        chmod +x git_hooks/pre-push
+        git config core.hooksPath git_hooks
+        echo ":white_check_mark: Hooks de Git configurados correctamente."
+    build_runner:
+      description: "Run build runner for packages that depend on build_runner"
+      packageFilters:
+        dependsOn: build_runner
+      run: dart run build_runner build --delete-conflicting-outputs
+
+  command:
+    bootstrap:
+      runPubGetInParallel: false
+      usePubspecOverrides: false
+      hooks:
+        pre: melos run setup_hooks
+        post: melos exec --order-dependents --concurrency=5 dart run build_runner build --delete-conflicting-outputs
+    clean:
+      hooks:
+        post: melos exec --order-dependents --flutter --concurrency=1 -- "flutter clean"
+# End of Melos configuration

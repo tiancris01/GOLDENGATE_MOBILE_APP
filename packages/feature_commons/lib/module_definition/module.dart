@@ -7,7 +7,7 @@ abstract class Module<T> {
   Module(this._name);
 
   /// Returns a list of [GoRoute] objects that define the routing configuration for this module.
-  List<GoRoute> getRouterConfig();
+  List<GoRoute> getRouterConfig(T ref);
 
   /// Returns a map of route redirection flags for this module.
   Map<String, String> getRouteRedirectionFlags();

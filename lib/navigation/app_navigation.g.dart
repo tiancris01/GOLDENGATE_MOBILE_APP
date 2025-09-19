@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'router_provider.dart';
+part of 'app_navigation.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,42 +9,43 @@ part of 'router_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(router)
-const routerProvider = RouterProvider._();
+@ProviderFor(appRoute)
+const appRouteProvider = AppRouteProvider._();
 
-final class RouterProvider extends $FunctionalProvider<GoRouter, GoRouter, GoRouter>
-    with $Provider<GoRouter> {
-  const RouterProvider._()
+final class AppRouteProvider
+    extends $FunctionalProvider<List<GoRoute>, List<GoRoute>, List<GoRoute>>
+    with $Provider<List<GoRoute>> {
+  const AppRouteProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'routerProvider',
+        name: r'appRouteProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$routerHash();
+  String debugGetCreateSourceHash() => _$appRouteHash();
 
   @$internal
   @override
-  $ProviderElement<GoRouter> $createElement($ProviderPointer pointer) =>
+  $ProviderElement<List<GoRoute>> $createElement($ProviderPointer pointer) =>
       $ProviderElement(pointer);
 
   @override
-  GoRouter create(Ref ref) {
-    return router(ref);
+  List<GoRoute> create(Ref ref) {
+    return appRoute(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(GoRouter value) {
+  Override overrideWithValue(List<GoRoute> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<GoRouter>(value),
+      providerOverride: $SyncValueProvider<List<GoRoute>>(value),
     );
   }
 }
 
-String _$routerHash() => r'3e6e3fa2b52e59559b46cbe3a1856250b1e86bbc';
+String _$appRouteHash() => r'a6e597f9bbda340194f4f4f857cf063fae20b41f';

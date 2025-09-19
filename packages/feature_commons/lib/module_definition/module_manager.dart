@@ -41,7 +41,9 @@ class ModuleManager {
 
   /// Aggregates all route redirection flags from registered modules.
   Map<String, String> allRouteRedirectionFlags() {
-    return Map.fromEntries(_modules.values.expand((module) => module.getRouteRedirectionFlags().entries));
+    return Map.fromEntries(
+      _modules.values.expand((module) => module.getRouteRedirectionFlags().entries),
+    );
   }
 
   /// Clears all registered modules (for testing or reset).
