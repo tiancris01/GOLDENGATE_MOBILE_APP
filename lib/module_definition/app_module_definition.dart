@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../navigation/app_navigation.dart';
+import '../navigation/app_routes.dart';
 
 class AppModuleDefinition extends Module<Ref> {
   static String moduleName = 'AppModuleDefinition';
@@ -17,5 +18,10 @@ class AppModuleDefinition extends Module<Ref> {
   @override
   List<GoRoute> getRouterConfig(Ref ref) {
     return ref.read(appRouteProvider);
+  }
+
+  @override
+  String? initialLocation() {
+    return AppRoutes.initialLocation;
   }
 }
