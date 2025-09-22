@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../navigation/route_names.dart';
+import '../../navigation/app_routes.dart';
 
 class PageNotFound extends StatelessWidget {
   final String errorMessage;
@@ -23,7 +23,7 @@ class PageNotFound extends StatelessWidget {
               const SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () {
-                  GoRouter.of(context).goNamed(RouteNames.home);
+                  GoRouter.of(context).goNamed(AppRoutes.home);
                 },
                 child: const Text('Home Page', style: TextStyle(fontSize: 20)),
               ),

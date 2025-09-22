@@ -1,3 +1,33 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 2025-09-17
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`auth` - `v0.0.2`](#auth---v002)
+ - [`feature_commons` - `v0.0.2`](#feature_commons---v002)
+
+---
+
+#### `auth` - `v0.0.2`
+
+ - **FEAT**: [tt][GG-018] Enhance module definition and manager, update commit hooks for GG format (#18).
+
+#### `feature_commons` - `v0.0.2`
+
+ - **FEAT**: [tt][GG-018] Enhance module definition and manager, update commit hooks for GG format (#18).
+
 - Initial commit
 - [dc][GG-001] Update branch and commit conventions documentation (#2)
 - [dc][GG-002] Add branch and commit convention checks workflow and pre-push hook (#3)

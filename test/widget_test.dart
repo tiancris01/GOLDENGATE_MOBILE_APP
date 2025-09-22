@@ -5,14 +5,14 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:golden_gate_app/main.dart';
+import 'package:golden_gate_app/ui/home/home.dart';
 
 void main() {
   testWidgets('Splash page loads and displays title', (WidgetTester tester) async {
-    await tester.pumpWidget(const ProviderScope(child: MyApp()));
-    await tester.pumpAndSettle();
+    await tester.pumpWidget(const ProviderScope(child: MaterialApp(home: SplashPage())));
     expect(find.text('Splash'), findsOneWidget);
     expect(find.text('Splash Page'), findsOneWidget);
   });
