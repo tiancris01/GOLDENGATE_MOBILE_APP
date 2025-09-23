@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../navigation/auth_navigation.dart';
 
 class AuthModuleDefinition extends Module<Ref> {
-  static String moduleName = 'AppModuleDefinition';
+  static String moduleName = 'AuthModuleDefinition';
   AuthModuleDefinition() : super(moduleName);
 
   @override
