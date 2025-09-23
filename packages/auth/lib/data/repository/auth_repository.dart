@@ -28,6 +28,6 @@ AuthRepository authRepository(Ref ref) {
 }
 
 @riverpod
-Stream<User?> currentUserStream(Ref ref) {
+Stream<User?> authState(Ref ref) {
   return ref.watch(firebaseAuthProvider).authStateChanges();
 }
