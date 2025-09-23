@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-09-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`auth` - `v0.0.2+1`](#auth---v0021)
+
+---
+
+#### `auth` - `v0.0.2+1`
+
+ - **FIX**: [tt][GG-018] Update and fix auth routes (#25).
+ - **FIX**: [tt][GG-023] Update and fix auth routes (#24).
+
+
 ## 2025-09-17
 
 ### Changes
