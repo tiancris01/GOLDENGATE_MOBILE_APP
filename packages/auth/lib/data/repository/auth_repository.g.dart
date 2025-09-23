@@ -50,25 +50,25 @@ final class AuthRepositoryProvider
 
 String _$authRepositoryHash() => r'58aed3301224fc414115fbe4f1357dfc86cc3407';
 
-@ProviderFor(currentUserStream)
-const currentUserStreamProvider = CurrentUserStreamProvider._();
+@ProviderFor(authState)
+const authStateProvider = AuthStateProvider._();
 
-final class CurrentUserStreamProvider
+final class AuthStateProvider
     extends $FunctionalProvider<AsyncValue<User?>, User?, Stream<User?>>
     with $FutureModifier<User?>, $StreamProvider<User?> {
-  const CurrentUserStreamProvider._()
+  const AuthStateProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'currentUserStreamProvider',
+        name: r'authStateProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$currentUserStreamHash();
+  String debugGetCreateSourceHash() => _$authStateHash();
 
   @$internal
   @override
@@ -77,8 +77,8 @@ final class CurrentUserStreamProvider
 
   @override
   Stream<User?> create(Ref ref) {
-    return currentUserStream(ref);
+    return authState(ref);
   }
 }
 
-String _$currentUserStreamHash() => r'f8115e0f24aa6c9abc43c61679fbf3c9cae792d5';
+String _$authStateHash() => r'afdf515e14d0bb725ca181867cf6d626a5d85246';
