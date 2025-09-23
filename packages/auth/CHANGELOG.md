@@ -1,3 +1,8 @@
+## 0.0.2+1
+
+ - **FIX**: [tt][GG-018] Update and fix auth routes (#25).
+ - **FIX**: [tt][GG-023] Update and fix auth routes (#24).
+
 ## 0.0.2
 
  - **FEAT**: [tt][GG-018] Enhance module definition and manager, update commit hooks for GG format (#18).
