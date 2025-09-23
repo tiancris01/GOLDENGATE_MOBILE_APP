@@ -5,4 +5,5 @@ class AuthRoutes {
   static const String verifyEmail = '/verifyEmail';
   static const String changePassword = '/changePassword';
   static const String firebaseError = '/firebaseError';
+  static const String pageNotFound = '/pageNotFound';
 }
