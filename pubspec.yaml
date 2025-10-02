@@ -9,6 +9,7 @@ environment:
 workspace:
   - packages/auth
   - packages/feature_commons
+  - packages/design_system
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -96,7 +97,7 @@ flutter:
 melos:
   useRootAsPackage: true
   packages:
-    - packages/*
+    - "packages/*"
 
   versioning:
     enabled: true
