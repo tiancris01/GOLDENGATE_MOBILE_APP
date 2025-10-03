@@ -6,21 +6,21 @@ To enable Melos automated versioning and changelog generation, follow these comm
 
 Start every commit message with a Conventional Commit type, followed by your ticketing prefix:
 
-- `feat: [ft][MB-001] Add event API integration`
-- `fix: [fx][MB-006] Fix payment processing bug`
-- `docs: [dc][MB-008] Update API documentation`
-- `chore: [ch][MB-010] Update Flutter dependencies`
-- `refactor: [rf][MB-003] Refactor user model structure`
-- `test: [ts][MB-009] Add unit tests for event service`
-- `perf: [MB-700] Improve performance of event service`
+- `feat: [ft][GG-001] Add event API integration`
+- `fix: [fx][GG-006] Fix payment processing bug`
+- `docs: [dc][GG-008] Update API documentation`
+- `chore: [ch][GG-010] Update Flutter dependencies`
+- `refactor: [rf][GG-003] Refactor user model structure`
+- `test: [ts][GG-009] Add unit tests for event service`
+- `perf: [GG-700] Improve performance of event service`
 - `BREAKING CHANGE: ...` (or `feat!: ...`) for major version bumps
 
 ## Examples
 
 ```
-feat: [ft][MB-001] Add event API integration
-fix: [fx][MB-006] Fix payment processing bug
-chore: [ch][MB-010] Update Flutter dependencies
+feat: [ft][GG-001] Add event API integration
+fix: [fx][GG-006] Fix payment processing bug
+chore: [ch][GG-010] Update Flutter dependencies
 ```
 
 ## Best Practices
