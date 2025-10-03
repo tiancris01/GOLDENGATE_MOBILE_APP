@@ -2,7 +2,7 @@
 
 # Validate branch name
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr/|wr/|fx/|hf/|dc/|ts|ch/) ]]; then
+if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr/|wr/|fx/|hf/|dc/|ts|ch|auth|ds_system) ]]; then
   echo "Invalid branch name: $BRANCH_NAME"
   exit 1
 fi

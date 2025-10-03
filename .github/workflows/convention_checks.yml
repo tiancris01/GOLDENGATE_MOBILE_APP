@@ -18,7 +18,7 @@ jobs:
       - name: Validate branch name
         run: |
           BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
-          if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr|wr|fx|hf|dc|ts|ch/) ]]; then
+            if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr|wr|fx|hf|dc|ts|ch|auth|ds_system) ]]; then
             echo "Invalid branch name: $BRANCH_NAME"
             exit 1
           fi
