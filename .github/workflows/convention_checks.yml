@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Fetch all branches
+        run: git fetch --all
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -18,7 +20,7 @@ jobs:
       - name: Validate branch name
         run: |
           BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
-            if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr|wr|fx|hf|dc|ts|ch|auth|ds_system) ]]; then
+          if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr|wr|fx|hf|dc|ts|ch|auth|ds_system) ]]; then
             echo "Invalid branch name: $BRANCH_NAME"
             exit 1
           fi
@@ -33,7 +35,10 @@ jobs:
             fi
           done
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          flutter pub get
+          cd packages/ds_system/example
+          flutter pub get
       - name: Format check
         run: dart format --set-exit-if-changed .
       - name: Analyze code

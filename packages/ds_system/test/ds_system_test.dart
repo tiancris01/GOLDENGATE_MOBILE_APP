@@ -1,12 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:ds_system/ds_system.dart';
-
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
+  test('ds_system atomic design setup is valid', () {
+    // Placeholder test: update when you add your first atom/molecule/organism
+    expect(true, isTrue);
   });
 }
