@@ -1,7 +1,7 @@
 name: Convention Checks
 
 on:
-  push:
+  pull_request:
     branches:
       - "**"
 
@@ -17,19 +17,21 @@ jobs:
           flutter-version: "3.35.1"
       - name: Validate branch name
         run: |
-          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          BRANCH_NAME="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
           if [[ ! $BRANCH_NAME =~ ^(main|ft/|tt/|rf/|cr|wr|fx|hf|dc|ts|ch/) ]]; then
             echo "Invalid branch name: $BRANCH_NAME"
             exit 1
           fi
-      - name: Validate commit message
+      - name: Validate commit messages
         run: |
-          COMMIT_MSG=$(git log --pretty=format:%s -1)
-          if [[ ! $COMMIT_MSG =~ ^(feat|fix|docs|chore|refactor|perf|test|style|build|ci|revert|BREAKING\ CHANGE):\ \[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
-            echo "Invalid commit message: $COMMIT_MSG"
-            echo "Expected format: <type>: [tt][GG-018] Description"
-            exit 1
-          fi
+          # Check all non-merge commit messages in the PR branch
+          git log --pretty=format:%s --no-merges origin/${GITHUB_BASE_REF}..HEAD | while read COMMIT_MSG; do
+            if [[ ! $COMMIT_MSG =~ ^(feat|fix|docs|chore|refactor|perf|test|style|build|ci|revert|BREAKING\ CHANGE):\ \[(ft|tt|rf|cr|wr|fx|hf|dc|ts|ch)\]\[GG-[0-9]{3}\]\ .+ ]]; then
+              echo "Invalid commit message: $COMMIT_MSG"
+              echo "Expected format: <type>: [tt][GG-018] Description"
+              exit 1
+            fi
+          done
       - name: Install dependencies
         run: flutter pub get
       - name: Format check

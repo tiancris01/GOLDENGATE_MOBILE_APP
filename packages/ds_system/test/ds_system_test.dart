@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:design_system/design_system.dart';
+import 'package:ds_system/ds_system.dart';
 
 void main() {
   test('adds one to input values', () {
